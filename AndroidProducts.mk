@@ -16,3 +16,7 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/omni_dumpling.mk
+
+COMMON_LUNCH_CHOICES := \
+    omni_dumpling-eng \
+    omni_dumpling-userdebug
