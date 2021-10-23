@@ -29,6 +29,10 @@ PRODUCT_PACKAGES += \
     qcom_decrypt \
     qcom_decrypt_fbe
 
+# Resolution
+TARGET_SCREEN_HEIGHT := 2160
+TARGET_SCREEN_WIDTH := 1080
+
 # tzdata
 PRODUCT_PACKAGES += \
     tzdata_twrp
