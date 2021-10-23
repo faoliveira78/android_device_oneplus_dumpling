@@ -23,8 +23,6 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-DEVICE_PATH := device/oneplus/dumpling
-
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
@@ -45,9 +43,6 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := dumpling
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8998
 TARGET_NO_BOOTLOADER := true
@@ -58,7 +53,7 @@ TW_INCLUDE_CRYPTO := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := 2099-12-31
-PLATFORM_VERSION := 16.1.0
+PLATFORM_VERSION := 80
 
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 
