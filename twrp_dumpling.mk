@@ -36,7 +36,7 @@ TARGET_SCREEN_WIDTH := 1080
 # tzdata
 PRODUCT_PACKAGES += \
     tzdata_twrp
-    
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore=msm8998 \
     ro.hardware.gatekeeper=msm8998 \
