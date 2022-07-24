@@ -1,5 +1,5 @@
 # android_device_oneplus_dumpling
-Tree for building TWRP for OnePlus 5T
+Tree for building TWRP for OnePlus 5T (Decryption works on Android 12.x ROMs)
 
 ## Device specifications
 
@@ -20,30 +20,30 @@ Tree for building TWRP for OnePlus 5T
 
 ## Device picture
 
-![OnePlus 5T](https://image01.oneplus.net/shop/201711/16/1850/c2baf281695709898707dd551a05274c_260_0.png "OnePlus 5T in black")
+![OnePlus 5T](https://cdn.opstatics.com/store/20170907/assets/images/support/support-list/model-specs-list/details/5t-black.png "OnePlus 5T in black")
 
 ## Kernel
 
-Kernel source:
-https://github.com/LineageOS/android_kernel_oneplus_msm8998
+Kernel source: (prebuilt)
+https://github.com/faoliveira78/android_kernel_oneplus_msm8998
 
 ## Compile
 
-First repo init the TWRP 11.0 tree:
+First repo init the TWRP 12.1 tree:
 
 ```
-mkdir ~/android/twrp-11.0
-cd ~/android/twrp-11.0
-repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11.0
+mkdir ~/android/twrp-12.1
+cd ~/android/twrp-12.1
+repo init -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
 ```
 
-Then add to a local manifest (if you don't have .repo/local_manifest then make that directory and make a blank file and name it something like twrp.xml):
+Then add to a local manifest (if you don't have .repo/local_manifests then make that directory and make a blank file and name it something like twrp.xml):
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="LineageOS/android_kernel_oneplus_msm8998" path="kernel/oneplus/msm8998" remote="github" revision="lineage-18.1"/>
-  <project name="faoliveira78/android_device_oneplus_dumpling" path="device/oneplus/dumpling" remote="github" revision="android-11"/>
+  <project name="faoliveira78/android_kernel_oneplus_msm8998" path="kernel/oneplus/msm8998" remote="github" revision="lineage-19.1"/>
+  <project name="faoliveira78/android_device_oneplus_dumpling" path="device/oneplus/dumpling" remote="github" revision="android-12.1"/>
 </manifest>
 ```
 
@@ -53,6 +53,12 @@ Now you can sync your source:
 repo sync
 ```
 
+To be able to compile you need to cherry-pick the following commits:
+
+```
+source build/envsetup.sh
+repopick 5405 5540
+```
 Finally execute these:
 
 ```

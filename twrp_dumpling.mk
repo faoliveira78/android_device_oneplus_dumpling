@@ -15,10 +15,10 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := dumpling
+PRODUCT_RELEASE_NAME := OnePlus5T
 
-$(call inherit-product, build/target/product/core_64_bit.mk)
-$(call inherit-product, build/target/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Inherit from our custom product configuration
@@ -32,10 +32,6 @@ PRODUCT_PACKAGES += \
 # Resolution
 TARGET_SCREEN_HEIGHT := 2160
 TARGET_SCREEN_WIDTH := 1080
-
-# tzdata
-PRODUCT_PACKAGES += \
-    tzdata_twrp
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hardware.keystore=msm8998 \
